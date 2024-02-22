@@ -1,0 +1,18 @@
+<div  class="portfolio-div">
+
+
+
+    <h1 *ngIf="portfolio==false"> No Porfolio added Yet</h1>
+</div>
+
+<div class="div1">
+    <h1>
+        Here is the link for your portfolio
+    </h1>
+    <ol>
+        <li *ngFor="let link of portfolioLinks">
+            <a [href]="link" target="_blank">Portfolio Link</a>
+        </li>
+    </ol>
+</div>
+

@@ -1,0 +1,164 @@
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <img
+        src="../../../../assets/logo12.png"
+        alt="Logo"
+        width="100"
+        height="100"
+        class="d-inline-block align-text-top logo-img"
+      />
+      <h2>Welcome. Lets make life memorable</h2>
+      <p>Register yourself and let's get started.</p>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="Email"
+             
+            />
+            <div *ngIf="submitted && registerForm.get('email')?.errors ">
+             <p style="color: red;">
+               Email is required and should be in correct format 
+             </p> 
+            </div>
+          </div>
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+          </div>
+          <div *ngIf="submitted && registerForm.get('password')?.errors">
+            <p style="color: red;">
+              Password must contain at least one uppercase letter, one special character and Minimum length of 6 characters
+            </p> 
+           
+           </div>
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Re-type Password"
+              formControlName="confirm_password"
+            />
+          </div>
+
+          <div *ngIf="submitted && registerForm.controls['confirm_password']?.hasError('passwordMismatch')">            <p style="color: red;">
+              Passwords do not match
+            </p>
+          </div>
+          <div *ngIf="submitted && registerForm.controls['confirm_password']?.hasError('required')">
+            <p style="color: red;">
+              *Required
+            </p>
+          </div>
+          
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+            <input
+              type="tel"
+              pattern="[0-9]{11}"
+              formControlName="phone"
+              placeholder="Phone Number (03XXXXXXXXX)"
+            />
+          </div>
+          <div *ngIf="submitted && registerForm.get('phone')?.errors">
+            <p style="color: red;">
+              Incorrect format of phone number 
+            
+            </p> 
+          </div>
+
+          <div class="row clearfix">
+            <div class="col_half">
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input
+                  type="text"
+                  formControlName="firstName"
+                  placeholder="First Name"
+                />
+              </div>
+            </div>
+            <div class="col_half">
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input
+                  type="text"
+                  formControlName="lastName"
+                  placeholder="Last Name"
+                />
+              </div>
+
+            </div>
+            <div *ngIf="submitted && (registerForm.get('firstName')?.errors || registerForm.get('lastName')?.errors)">
+              <p style="color: red;">
+                Name is required and should only consist of Alphabets 
+              
+              </p> 
+            </div>
+          </div>
+          <div class="input_field radio_option">
+            <input
+              type="radio"
+              formControlName="gender"
+              id="rd1"
+              value="Male"
+            />
+            <label for="rd1">Male</label>
+            <input
+              type="radio"
+              formControlName="gender"
+              id="rd2"
+              value="Female"
+            />
+            <label for="rd2">Female</label>
+          </div>
+          <div *ngIf="submitted && registerForm.get('gender')?.errors">
+            <p style="color: red;">
+              Choose atleast one 
+            
+            </p> 
+           
+           </div>
+          <div class="input_field select_option">
+            <select formControlName="city">
+              <option disabled selected value="">Select a City</option>
+              <option>Lahore</option>
+              <option>Karachi</option>
+              <option>Islamabad</option>
+            </select>
+            <div class="select_arrow"></div>
+          </div>
+          <div *ngIf="submitted && registerForm.get('city')?.errors">
+            <p style="color: red;">
+            Choose at least one 
+            </p> 
+           
+           </div>
+          <div class="input_field checkbox_option">
+            <input type="checkbox" id="cb1" />
+            <label for="cb1">I agree with terms and conditions</label>
+          </div>
+          <button
+            class="btn button d-block mx-auto"
+            type="submit"
+            value="Register"
+    
+          >
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

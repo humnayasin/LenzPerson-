@@ -1,0 +1,34 @@
+<div class="container1">
+    <div class="container2">
+        <img src="../../../../assets/camra_icon.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top cam-img">
+        <h1 >
+            HOW TO BUID PORTFOLIO?
+        </h1>
+    </div>
+        <ol>
+      <li>
+          <div class="title">Design</div>
+          <div class="descr">Design Your PortFolio Using Canva</div>
+          
+        </li>
+        <li>
+            
+            <div class="title">Upload</div>
+            <div class="descr">download your portfolio and upload here </div>
+        </li>
+        
+    </ol>
+    <a href="https://www.canva.com/templates/?query=p-hotographer-portfolio-templates&pricing=FREE" target="_blank" class="btn btn-info" >Design with Canva</a>
+    <form  [formGroup]="portfolioInput"  (ngSubmit)="uploadPortfolio()" enctype="multipart/form-data">
+    <input
+              type="file"
+              formControlName="PortFolio"
+              id="profilePicInput"
+              (change)="onFileChange($event)"
+              />
+              
+        
+                <button  class="btn btn-info ">Upload Pdf Files</button>
+                </form>
+    
+</div>

@@ -1,0 +1,30 @@
+<div class="toggle-button">
+
+    <button type="button" id="sidebarCollapse" class="btn btn-info togglebtn" (click)="handleClick($event)">
+        <i class="fa fa-align-left"></i>
+    </button>
+</div>
+<nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Customer DashBoard</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <p>Key Features</p>
+            <li (click)="HandleLinkClicked('photographer')" class="active">
+                <a>Photographers</a>
+            </li> 
+            <li>
+                <a> Management</a>
+            </li>
+            <li (click)="HandleLinkClicked('booking')">
+                <a>My Bookings</a>                
+            </li> 
+            <li (click)="HandleLinkClicked('setting')" >
+                <a >Settings and Profile</a>
+            </li>
+        
+        </ul>
+                <button (click)="logout()" class="logoutbtn">Logout </button>  
+    </nav>
+
+   

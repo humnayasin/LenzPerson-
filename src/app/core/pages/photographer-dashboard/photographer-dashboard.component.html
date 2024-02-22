@@ -1,0 +1,18 @@
+<div class="dashboard">
+
+  <div class="container">
+    <app-sidebar (linkClicked)="onLinkClicked($event)"></app-sidebar>
+    <div class="content-div">
+      <app-about *ngIf="aboutVisibility"></app-about>
+      <app-portfolio-builder *ngIf="portfolioBuilderVisibility"></app-portfolio-builder>
+      <app-portfolio *ngIf="portfolioVisibility"></app-portfolio>
+      <app-photo-gallery *ngIf="photoGalleryVisibility"></app-photo-gallery>
+      <app-update-photographer-details *ngIf="SettingVisibility"></app-update-photographer-details>
+      <app-booking-requests *ngIf="clientManagementVisibility"></app-booking-requests>
+    
+    
+      </div>
+      
+    </div>
+
+  </div>

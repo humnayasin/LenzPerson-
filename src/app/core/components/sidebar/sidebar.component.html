@@ -1,0 +1,48 @@
+
+<button type="button" id="sidebarCollapse" class="btn btn-info" (click)="handleClick($event)">
+    <i class="fa fa-align-left"></i>
+</button>
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Photographer DashBoard</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Key Features</p>
+            <li (click)="HandleLinkClicked('about')" class="active">
+                <a >About</a>
+               
+            </li>   
+            <li (click)="HandleLinkClicked('clientManagement')">
+                <a>Client Management</a>
+            </li>
+            <li (click)="HandleLinkClicked('portfolioBuilder')">
+                <a>Portfolio Builder</a>
+                <!-- <a href="https://www.canva.com/templates/?query=p-hotographer-portfolio-templates&pricing=FREE">Portfolio Builder</a> -->
+                
+            </li> 
+             <li (click)="HandleLinkClicked('portfolio')">
+                <a>Portfolio</a>
+                
+            </li>   
+             <li (click)="HandleLinkClicked('photoGallery')">
+                <a >Photo Gallery</a>
+                
+            </li>
+       
+            <li (click)="HandleLinkClicked('setting')">
+                <a >Settings and Profile</a>
+            </li>
+            <li>
+                <a >Analytics and Reports</a>
+            </li>
+        </ul>
+
+
+                <button (click)="logout()"  class="logoutbtn">Logout </button>
+        
+            
+         
+    </nav>
+
+   

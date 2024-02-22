@@ -1,0 +1,32 @@
+<div class="registration-form" ng-controller="RegistrationController as regCtrl">
+    <button class="close-button" (click)="closeForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+    <header>
+      <h1>Offer</h1>
+      <div *ngIf="submitted && offerForm.get('charges')?.errors">
+        <p style="color: red;">
+         *Charges field is empty
+        </p> 
+       
+       </div>  
+      <p>Fill in the charges you want to take to cover this event</p>
+    </header>
+    <form [formGroup]="offerForm" (ngSubmit)="onsubmit()">
+  
+      <div class="input-section">
+      
+      <input id="charges" type="number" placeholder="PKR" autocomplete="off" formControlName="charges" />
+   
+        
+      <button type="submit" class="animated-button">
+        <span class="icon-paper-plane"><i class="fa fa-money"></i></span>
+    </button>
+  
+        <!-- <div class="animated-button"><span class="icon-paper-plane" ><i class="fa fa-money"></i></span>
+    </div> -->
+      </div>
+
+
+     
+    </form>
+  </div>
+  

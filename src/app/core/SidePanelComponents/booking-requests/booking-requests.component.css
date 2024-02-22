@@ -1,0 +1,29 @@
+.blur-background {
+    filter: blur(3px);
+
+  }
+.bookingHeading{
+  margin-top: 1rem;
+}
+
+
+
+
+.requestDiv{
+  background-color: beige;
+}
+.acceptedDiv{
+  background-color: rgb(170, 192, 235);
+}
+.doneDiv{
+  background-color: rgb(120, 137, 122);
+}
+.rejectedDiv{
+  background-color: rgb(220, 97, 97);
+}
+.pendingDiv{
+  background-color: rgb(238, 238, 182);
+}
+.btn{
+  margin: 1px;
+}

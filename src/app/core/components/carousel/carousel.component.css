@@ -1,0 +1,59 @@
+.carousel-div1{
+    height: 400px;
+}
+
+.carousel-image{
+    height: 400px;
+    object-fit: cover;
+}
+.c-p{
+    color: rgb(57, 57, 55);
+    font-size:1rem;
+    text-align: left;
+    
+    
+}
+.c-heading{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(121, 6, 25);
+        font-size:2rem;
+        text-align: left;
+
+}
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 300px; /* You can adjust this height as needed for larger screens */
+      }
+      
+      .c-p {
+        color: rgb(57, 57, 55);
+        font-size: 1rem;
+        text-align: left;
+      }
+      
+   
+
+      .carousel-div1 {
+        height: 300px; 
+      }
+    
+      .carousel-image {
+        height: 300px; 
+      }
+    
+      .c-heading {
+        font-size: 1.5rem;
+      }
+      
+
+
+
+
+
+
+
+
+
+
+
+  }

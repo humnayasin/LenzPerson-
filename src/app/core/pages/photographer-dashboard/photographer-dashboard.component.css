@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+}
+
+.content-div{
+ 
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+
+
+} 

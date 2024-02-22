@@ -1,0 +1,60 @@
+.photographer-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to top */
+  align-items: center;
+  background-image: url('../../../../assets/camra_image.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  opacity: 0.7;
+  padding: 20px; /* Add padding for space */
+}
+
+.photographer-section h1 {
+  font-size: 3em;
+  margin-top: 3rem;
+}
+
+.photographer-section p {
+  margin-bottom: 20px;
+}
+
+.booking-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #e74c3c;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .photographer-section {
+    padding: 10px; 
+    height: 90%;
+    
+  }
+  
+  .photographer-section h1 {
+    font-size: 2em; 
+    margin-bottom: 10px; 
+
+  }
+  .photographer-section p {
+    visibility: hidden;
+
+  }
+
+
+}

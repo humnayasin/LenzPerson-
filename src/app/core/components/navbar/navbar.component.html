@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    
+
+    <img src="../../../../assets/logoIcon.gif" alt="Logo" width="50" height="50" class="d-inline-block align-text-top "> 
+    <img src="../../../../assets/logo12.png" alt="Logo" width="20" height="20" class="d-inline-block align-text-top logo-img"> 
+ 
+
+
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="d-flex" role="search">
+      <input class="me-2 custom-input" type="search" placeholder="City Name" aria-label="Search" formControlName="city">
+      <button type="submit" class="custom-button">
+        <img src="../../../../assets/search.png" alt="Logo" width="40" height="25" class="d-inline-block align-text-top search-button">
+      </button>
+    </form>
+    
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="collapse navbar-collapse justify-content-end mr-3 navOptions" id="navbarSupportedContent">
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['user/register']">Register</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/user/login']">Login</a>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" (click)="navigateToDashboard()" [class.disabled]="!role">My Dashboard</button>
+        </li>
+      </ul>
+     
+    </div>
+  </div>
+
+</nav>
+

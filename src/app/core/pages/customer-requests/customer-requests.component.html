@@ -1,0 +1,183 @@
+<div class="container">
+    <h1>Requests Waiting to be Reviewed By Photographer</h1>
+    <table class="table table-info table-striped">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>P ID</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.id }}</td>
+          <td>
+
+            <button (click)="navigateToPhotographerDetails(request.photographerID)"> 
+              
+              {{ request.photographerID }}
+            </button>
+          </td>
+          <td>{{ request.startTime | date:'medium' }}</td>
+          <td>{{ request.endTime | date:'medium' }}</td>
+          <td>{{ request.status }}</td>
+          <td><button (click)="deleteRequest(request.id)" class="btn btn-danger">Cancel</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <app-photographer *ngIf="open" [Id]="selectedId"></app-photographer>
+    <div *ngIf="!requests || requests.length === 0">
+    No requests
+    </div>
+      
+    
+    <h1>Offered Requests</h1>
+    <table class="table table-warning table-striped">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>P ID</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Status</th>
+          <th>Charges</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of pending">
+          <td>{{ request.id }}</td>
+          <td>{{ request.photographerID}}</td>
+          <td>{{ request.startTime | date:'medium' }}</td>
+          <td>{{ request.endTime | date:'medium' }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.charges }}</td>
+          <td>
+            <button (click)="rejectRequest(request.id)"   class="btn btn-danger">Reject</button>
+            <button (click)="acceptRequest(request.id, request.photographerID)"  class="btn btn-success">Accept</button>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+    <div *ngIf="!pending || pending.length === 0">
+      No pending requests
+      </div>
+  
+    <h1>Accepted Booking Requests</h1>
+    <table class="table table-success table-striped" >
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>P ID</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Event Details</th>
+          <th>Charges</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of accepted">
+          <td>{{ request.id }}</td>
+          <td>{{ request.photographerID}}</td>
+          <td>{{ request.startTime | date:'medium' }}</td>
+          <td>{{ request.endTime | date:'medium' }}</td>
+          <td>{{ request.eventDetails }}</td>
+          <td>{{ request.charges }}</td>
+          <td><button   (click)="doneBookig(request.id )"     class="btn btn-success">Done and Paid</button></td>
+        </tr>
+      
+      </tbody>
+    </table>
+    <div *ngIf="!accepted || accepted.length === 0">
+      No accepted requests
+      </div>
+
+
+    <h1>Rejected Requests</h1>
+    <table class="table table-danger table-striped">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>P ID</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Status</th>
+          <th>Charges</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of rejected">
+          <td>{{ request.id }}</td>
+          <td>
+            {{ request.photographerID}}
+          </td>
+          <td>{{ request.startTime | date:'medium' }}</td>
+          <td>{{ request.endTime | date:'medium' }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.charges }}</td>
+          <td>
+            <button (click)="deleteRequest(request.id)"  class="btn btn-danger">Delete</button>
+         
+          </td>
+        </tr>
+      
+      </tbody>
+    </table>
+    <div *ngIf="!rejected || rejected.length === 0">
+      No pending requests
+      </div>
+  
+
+
+      <h1>Completed Requests History</h1>
+      <table class="table table-primary table-striped">
+        <thead>
+          <tr>
+            <th>Request ID</th>
+            <th>P ID</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Status</th>
+            <th>Charges</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of done">
+            <td>{{ request.id }}</td>
+            <td>
+              {{ request.photographerID}}
+            </td>
+            <td>{{ request.startTime | date:'medium' }}</td>
+            <td>{{ request.endTime | date:'medium' }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.charges }}</td>
+            <td>
+              <button (click)="giveFeedback(request.id,request.photographerID, request.customerID)"   
+              *ngIf="!feedbackIds.includes(request.id)" 
+              class="btn btn-danger">Give Feedback</button>
+            </td>
+       
+          </tr>
+  
+        </tbody>
+      </table>
+  </div>
+  <app-feedback-form 
+  *ngIf="showfeedBackForm"
+  (closeFormEvent)="closeForm()"
+  [bookingid]="selectedId"
+  [photographerid]="selectedPId"
+  [customerid]="selectedCId"
+  [Name]="customerName"
+  ></app-feedback-form>
+  <div *ngIf="!done || done.length === 0">
+    No done History
+    </div>
+  

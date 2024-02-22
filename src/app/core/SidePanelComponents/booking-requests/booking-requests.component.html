@@ -1,0 +1,116 @@
+<div class="requestsDisplay" [ngClass]="{ 'blur-background': showOfferForm }">
+
+    <h1>Booking Requests</h1>
+    <div class="container requestDiv" >
+    <div class="row">
+      <div class="col-md-4" *ngFor="let request of requests">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Request ID: {{ request.id }}</h5>
+            <p class="card-text">Customer ID: {{ request.customerID }}</p>
+            <p class="card-text">Start Time: {{ request.startTime | date:'medium' }}</p>
+            <p class="card-text">End Time: {{ request.endTime | date:'medium' }}</p>
+            <p class="card-text">Event Details: {{ request.eventDetails }}</p>
+            <p class="card-text">Status: {{ request.status }}</p>
+            <button  (click)="openOfferForm(request.id)" class="btn btn-success">Respond</button>
+            <button  (click)="rejectRequest(request.id)" class="btn btn-danger">Reject</button>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div *ngIf="!requests || requests.length === 0">
+    <p>No pending requests</p>
+</div>                         
+</div>
+<app-offer-form *ngIf="showOfferForm"  [bookingid]="selectedId"  (closeFormEvent)="closeForm()"></app-offer-form>
+<h1 class="bookingHeading">Pending To be Accepted by Customer</h1>
+<div class="container pendingDiv" >
+<div class="row">
+  <div class="col-md-4" *ngFor="let request of pending">
+    <div class="card ">
+      <div class="card-body">                                           
+        <h5 class="card-title">Request ID: {{ request.id }}</h5>
+        <p class="card-text">Customer ID: {{ request.customerID }}</p>
+        <p class="card-text">Start Time: {{ request.startTime | date:'medium' }}</p>
+        <p class="card-text">End Time: {{ request.endTime | date:'medium' }}</p>
+        <p class="card-text">Event Details: {{ request.eventDetails }}</p>
+        <p class="card-text">Status: {{ request.status }}</p>
+        <p class="card-text">charges: {{ request.charges }}</p>
+        <button  (click)="rejectRequest(request.id )" class="btn btn-danger">Reject</button>
+      </div>
+    </div>
+</div>                         
+</div>
+</div>
+<div *ngIf="!pending || pending.length === 0">
+  <p>No pending requests</p>
+</div>
+
+
+
+
+<h1> Accepted  Booking Requests</h1>
+<div class="container acceptedDiv" >
+<div class="row ">
+  <div class="col-md-4" *ngFor="let request of accepted">
+    <div class="card ">
+      <div class="card-body">
+        <h5 class="card-title">Request ID: {{ request.id }}</h5>
+        <p class="card-text">Customer ID: {{ request.customerID }}</p>
+        <p class="card-text">Start Time: {{ request.startTime | date:'medium' }}</p>
+        <p class="card-text">End Time: {{ request.endTime | date:'medium' }}</p>
+        <p class="card-text">Event Details: {{ request.eventDetails }}</p>
+        <p class="card-text">Charges: {{ request.charges }}</p>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<div *ngIf="!accepted || accepted.length === 0">
+  <p>No accepted requests</p>
+</div>
+
+
+<h1> Rejected  Booking Requests</h1>
+<div class="container rejectedDiv" >
+<div class="row">
+  <div class="col-md-4" *ngFor="let request of rejected">
+    <div class="card ">
+      <div class="card-body">
+        <h5 class="card-title">Request ID: {{ request.id }}</h5>
+        <p class="card-text">Customer ID: {{ request.customerID }}</p>
+        <p class="card-text">Start Time: {{ request.startTime | date:'medium' }}</p>
+        <p class="card-text">End Time: {{ request.endTime | date:'medium' }}</p>
+        <p class="card-text">Event Details: {{ request.eventDetails }}</p>
+        <p class="card-text">Charges: {{ request.charges }}</p>
+        <button  (click)="deleteRequest(request.id )" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<div *ngIf="!rejected || rejected.length === 0">
+  <p>No rejected requests</p>
+</div>
+
+<h1> Done History</h1>
+<div class="container doneDiv" >
+<div class="row">
+  <div class="col-md-4" *ngFor="let request of done">
+    <div class="card ">
+      <div class="card-body">
+        <h5 class="card-title">Request ID: {{ request.id }}</h5>
+        <p class="card-text">Customer ID: {{ request.customerID }}</p>
+        <p class="card-text">Start Time: {{ request.startTime | date:'medium' }}</p>
+        <p class="card-text">End Time: {{ request.endTime | date:'medium' }}</p>
+        <p class="card-text">Event Details: {{ request.eventDetails }}</p>
+        <p class="card-text">Charges: {{ request.charges }}</p>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<div *ngIf="!done || done.length === 0">
+  <p>No rejected requests</p>
+</div>

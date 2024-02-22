@@ -1,0 +1,20 @@
+<button class="close-button" (click)="closeForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+
+<div class="registration-form" ng-controller="RegistrationController as regCtrl">
+  <header>
+    <h1>Give Feedback</h1>
+    <div *ngIf="submitted && FeedBackForm.get('feedback')?.errors" class="error-message">
+      <p>* Feedback field is empty</p>
+    </div>  
+    <p>GIVE YOUR FEEDBACK ABOUT THE PHOTOGRAPHER'S WORK</p>
+  </header>
+  <form [formGroup]="FeedBackForm" (ngSubmit)="onsubmit()">
+    <div class="input-section">
+      <textarea placeholder="Your Feedback" formControlName="feedback"></textarea>
+      <button type="submit" class="animated-button">
+        <span class="icon-paper-plane"><i class="fa fa-comments-o" aria-hidden="true"></i></span>
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

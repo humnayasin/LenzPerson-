@@ -1,0 +1,45 @@
+<div class="card photographer-card">
+  <div class="card-body">
+    <h1 class="card-title">Photographer Details</h1>
+
+    <div class="profile-picture">
+      <img class="card-img-top" [src]="photographer.profilePicture" alt="Profile Picture" style="width: 100px; height: 100px;">
+    </div>
+    <div class="detail">
+      <label>Email:</label>
+      <span>{{ photographer.email }}</span>
+    </div>
+    <div class="detail">
+      <label>First Name:</label>
+      <span>{{ photographer.firstName }}</span>
+    </div>
+    <div class="detail">
+      <label>Last Name:</label>
+      <span>{{ photographer.lastName }}</span>
+    </div>
+    <div class="detail">
+      <label>Phone:</label>
+      <span>{{ photographer.phoneNumber }}</span>
+    </div>
+    <div class="detail">
+      <label>Gender:</label>
+      <span>{{ photographer.gender }}</span>
+    </div>
+    <div class="detail">
+      <label>City:</label>
+      <span>{{ photographer.city }}</span>
+    </div>
+    <div class="detail">
+      <label>Instagram Handle:</label>
+      <span>{{ photographer.instaHandle }}</span>
+    </div>
+    <div class="detail">
+      <label>Portfolio Link:</label>
+      <span>{{ photographer.portfolioLink }}</span>
+    </div>
+    <div class="detail">
+      <label>Camera Used:</label>
+      <span>{{ photographer.cameraUsed }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+
+<header>
+    <h1>{{ photographerName}} {{Lastname}} <br> <span>[ Portfolio Gallery ]</span></h1>
+</header>
+
+<div id="top"></div>
+<section class="gallery">
+	<div class="row">
+		<ul>
+
+			<ng-container *ngIf="galleryImages && galleryImages.length > 0">
+				<li *ngFor="let imageUrl of galleryImages">
+			
+					<img [src]="imageUrl" alt="">
+			
+				</li>
+			  </ng-container>
+		</ul>
+	</div> 
+
+
+<div class="bookMe">
+	<h1 class="heading1">
+
+		Book Me Now
+	</h1>
+	
+	<app-booking-request [photographerId]="Id"></app-booking-request>
+
+</div>
+	<div *ngIf="feedback.length > 0"class="feedback-container">
+		<h1 class="feedback-title">My Feedbacks</h1>
+		<div *ngFor="let item of feedback" class="feedback-item">
+			<h3 class="customer-name">UserName: {{ item.cName }}</h3>
+			<p class="customer-comment">FeedBack: {{ item.comment }}</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

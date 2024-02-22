@@ -1,0 +1,25 @@
+<div class="photoGalleryFormDiv">
+  <h2>Photographer Picture Form</h2>
+
+  <form [formGroup]="photographerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div formArrayName="pictures">
+      <div *ngFor="let picture of pictureControls.controls; let i = index" class="picture-container" [formGroupName]="i">
+        <label for="pictureFile">Upload Picture:</label>
+        <input type="file" (change)="onFileChange($event, i)" formControlName="pictureFile" accept="image/*">
+
+        <span class="remove-btn" (click)="removePicture(i)">Remove</span>
+      </div>
+    </div>
+
+    <button type="button" (click)="addPicture()">Add Picture</button>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div *ngIf="Display && Display.length > 0">
+  <h2>Uploaded Images</h2>
+  <div class="image-container">
+    <div *ngFor="let imageUrl of Display" class="image-item">
+      <img [src]="imageUrl" alt="Uploaded Image">
+    </div>
+  </div>
+</div>

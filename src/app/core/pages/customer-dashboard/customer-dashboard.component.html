@@ -1,0 +1,53 @@
+<ng-container *ngIf="PhotographerVisibility">
+
+  <div class="Dashboard"  >
+    <app-customer-sidebar (linkClicked)="onLinkClicked($event)"></app-customer-sidebar>
+    
+    <div class="heading-div">
+      
+      <h1>Customer Dashboard </h1>
+    <h1>Welcome to the LenzPerson <span [style]="nameStyle">{{ name }}</span></h1>
+    <h5>Here you find the best of the Photographer of your choice </h5>
+    
+  </div>
+  
+</div>
+
+
+<div class="photographer-container">
+  <h1 class="heading2">Choose any photographer to make your occasion memorable</h1>
+  <div class="photogrpaher-cards">
+    <div class="card" *ngFor="let Photographer of photographers">
+      <img src={{Photographer.profilePicture}} class="card-img-top" alt="Image not Found">
+      <div class="card-body">
+        <h3 class="card-title"><b>Name: </b>{{Photographer.firstName}}</h3>
+        <h3 class="card-text"><b>Email: </b>{{Photographer.email}}</h3>
+        <h3 class="card-text"><b>City: </b>{{Photographer.city}}</h3>
+        <a class="btn btn-info" (click)="viewPortfolio(Photographer)">View Portfolio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-gallery-section></app-gallery-section>
+
+</ng-container>
+<div *ngIf="settingVisibility" class="Dashboard"  >
+  <app-customer-sidebar (linkClicked)="onLinkClicked($event)"></app-customer-sidebar>
+  <div class="mx-auto">
+
+    <app-update-customer-details></app-update-customer-details>
+  </div>
+  
+</div>
+<div *ngIf="bookingVisibility" class="Dashboard"  >
+  <app-customer-sidebar (linkClicked)="onLinkClicked($event)"></app-customer-sidebar>
+  <div class="bookingSection">
+
+
+
+<app-customer-requests></app-customer-requests>
+ 
+  </div>
+  
+</div>

@@ -1,0 +1,17 @@
+
+.profileImage{
+    margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+
+}
+.detail{
+    width: 100%;
+    height:auto;
+    background-color: rgb(174, 142, 205);
+    margin: 1rem;
+    padding: 1rem;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+}

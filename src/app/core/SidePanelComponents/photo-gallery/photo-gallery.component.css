@@ -1,0 +1,85 @@
+/* photographer-form.component.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .photoGalleryFormDiv{
+      
+      margin: 3rem;
+      border: solid 3px black;
+      padding: 1rem;
+     
+
+  }
+
+  .app-photographer-form {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.picture-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 8px;
+  }
+  
+  .remove-btn {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #20746d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ea3ed6;
+  }
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  padding: 1rem;
+}
+
+.image-item {
+  width: 200px; 
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+  
